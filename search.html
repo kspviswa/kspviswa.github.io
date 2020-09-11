@@ -1,0 +1,22 @@
+---
+layout: layout
+title: Search
+permalink: /search/
+sitemap: false
+---
+
+<div id="home-search" class="home">
+    <script>
+        (function() {
+            var cx = '016356811416525847592:zerfq8h8on0';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    <gcse:search queryParameterName="searchString"></gcse:search>
+</div>

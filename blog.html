@@ -1,0 +1,38 @@
+---
+layout: layout
+title: Blog
+---
+<div class="grid" id="searchBar">
+<div>
+<div id="search" align="right">
+  <form role="search" method="get" action="{{site.baseurl}}/search/">
+     <input id="searchString" name="searchString"
+      placeholder="Be a Better Developer, etc." type="text" size="50">
+     <input id="searchButton" name="googleSearchName" type="submit" value="Search">
+  </form>
+</div>
+</div>
+</div>
+
+<div class="container">
+<h3>Latest Blog articles</h3>
+  <div class="panel panel-default">
+    <div class="panel-body">
+		{% for post in site.posts limit:5 %}
+			<div class="row">
+				 <div class="col-sm-4 col-md-4 col-lg-4">
+					 <h5 style="text-align: right">
+					 	{{ post.date | date: "%B %e, %Y" }}
+					 </h5>
+				 </div>
+				 <div class="col-sm-8 col-md-8 col-lg-8">
+					 <h5 style="text-align: left">
+					 	<strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong>
+					 </h5>
+				 </div>
+			</div>
+	    {% endfor %}
+	</div>
+  </div>
+For complete list of blog entries, visit <strong><a href="{{ site.baseurl }}archive.html">archives</a></strong>
+</div>

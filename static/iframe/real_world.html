@@ -1,0 +1,65 @@
+<html>
+  <head>
+	<meta http-equiv="refresh" content="5">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+	  var gdata;
+	  
+	  function getRandomArbitrary(min, max) {
+		return Math.floor(Math.random() * (max - min) + min);
+		}
+	
+	  function getRandomValue() {
+		var index = getRandomArbitrary(1,247);
+		//console.log(gdata);
+		return gdata[index].population;
+	  }
+		
+      function drawChart() {
+        /*var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  getRandomArbitrary(1,1000), getRandomArbitrary(1,1000)],
+          ['2005',  getRandomArbitrary(1,1000), getRandomArbitrary(1,1000)],
+          ['2006',  getRandomArbitrary(1,1000), getRandomArbitrary(1,1000)],
+          ['2007',  getRandomArbitrary(1,1000), getRandomArbitrary(1,1000)],
+		  ['2008', getRandomArbitrary(1,1000), getRandomArbitrary(1,1000)]
+        ]);*/
+		
+		$.getJSON('https://restcountries.eu/rest/v1/all',  function(data) {
+			gdata = data;
+			console.log(gdata.length);
+		/*});*/
+		
+		var data = google.visualization.arrayToDataTable([
+          ['Sample','Data'],
+          ['1',getRandomValue()],
+		  ['2',getRandomValue()],
+		  ['3',getRandomValue()],
+		  ['4',getRandomValue()],
+		  ['5',getRandomValue()],
+		  ['6',getRandomValue()],
+		  ['7',getRandomValue()]
+          
+        ]);
+
+        var options = {
+          title: 'Ramdom distribution experiment',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+		});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
