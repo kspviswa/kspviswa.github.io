@@ -33,7 +33,7 @@ linkedin: kspviswa
 stackoverflow: users/3315943/viswa-ksp   #e.g: users/2735833/proton1h1
 #Comment out if you don't want disqus 
 disqus: 
-    shortname: kspviz
+    shortname: myblogviz
 # google_analytics: UA-78703019-1
 
 
