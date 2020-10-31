@@ -26,14 +26,14 @@ title: kspviswa
 author: kspviswa
 description: My digital footprint in open-source family.
 avatar: profile1.png
-email: kspviswa.github@gmail.com
+email: ""
 github: kspviswa
 twitter: kspviswa
 linkedin: kspviswa
 stackoverflow: users/3315943/viswa-ksp   #e.g: users/2735833/proton1h1
 #Comment out if you don't want disqus 
 disqus: 
-    shortname: kspviswa
+    shortname: kspviz
 # google_analytics: UA-78703019-1
 
 
